@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 02-03-2022 a las 18:37:37
+-- Tiempo de generación: 09-03-2022 a las 17:14:50
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.27
 
@@ -87,13 +87,6 @@ CREATE TABLE `caja` (
   `caja_fecha_cierre` datetime DEFAULT NULL,
   `caja_estado` tinyint(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `caja`
---
-
-INSERT INTO `caja` (`id_caja`, `id_turno`, `id_caja_numero`, `caja_fecha`, `id_usuario_apertura`, `caja_apertura`, `caja_fecha_apertura`, `id_usuario_cierre`, `caja_cierre`, `caja_fecha_cierre`, `caja_estado`) VALUES
-(71, 1, 1, '2022-03-02', 2, '100.00', '2022-03-02 13:25:21', NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -207,7 +200,8 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id_cliente`, `id_tipodocumento`, `cliente_razonsocial`, `cliente_nombre`, `cliente_numero`, `cliente_correo`, `cliente_direccion`, `cliente_direccion_2`, `cliente_telefono`, `cliente_fecha`, `cliente_estado`) VALUES
-(3, 2, '', 'Anonimo', '11111111', 'anonimo@gmail.com', 'Calle S/n', '', '999999999', '2021-03-26 00:00:00', 1);
+(3, 2, '', 'Anonimo', '11111111', 'anonimo@gmail.com', 'Calle S/n', '', '999999999', '2021-03-26 00:00:00', 1),
+(4, 2, '', 'LUIS ANTONIO SALAZAR BARTRA', '71106432', '', 'Alzamora 958', '', '', '2022-03-08 19:44:36', 1);
 
 -- --------------------------------------------------------
 
@@ -230,14 +224,6 @@ CREATE TABLE `comanda` (
   `comanda_estado` tinyint(2) NOT NULL,
   `comanda_codigo` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `comanda`
---
-
-INSERT INTO `comanda` (`id_comanda`, `id_mesa`, `id_usuario`, `id_cliente`, `comanda_nombre_delivery`, `comanda_direccion_delivery`, `comanda_telefono_delivery`, `comanda_cantidad_personas`, `comanda_correlativo`, `comanda_total`, `comanda_fecha_registro`, `comanda_estado`, `comanda_codigo`) VALUES
-(1, 6, 2, NULL, NULL, NULL, NULL, '1', '020322-1', '7.00', '2022-03-02 13:24:02', 1, '1646245442.5161'),
-(2, 7, 2, NULL, NULL, NULL, NULL, '1', '020322-2', '14.00', '2022-03-02 13:28:40', 1, '1646245720.2434');
 
 -- --------------------------------------------------------
 
@@ -263,14 +249,6 @@ CREATE TABLE `comanda_detalle` (
   `comanda_detalle_usuario` int(11) DEFAULT NULL,
   `id_usuario` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `comanda_detalle`
---
-
-INSERT INTO `comanda_detalle` (`id_comanda_detalle`, `id_comanda`, `id_producto`, `comanda_detalle_precio`, `comanda_detalle_cantidad`, `comanda_detalle_despacho`, `comanda_detalle_total`, `comanda_detalle_observacion`, `comanda_detalle_eliminacion`, `comanda_detalle_fecha_eliminacion`, `comanda_detalle_fecha_registro`, `comanda_detalle_estado`, `comanda_detalle_estado_venta`, `comanda_detalle_hora_entrega`, `comanda_detalle_usuario`, `id_usuario`) VALUES
-(1, 1, 1, '7.00', '1', 'SALON', '7.00', '-', NULL, NULL, '2022-03-02 13:24:02', 1, 0, NULL, NULL, 2),
-(2, 2, 1, '7.00', '2', 'SALON', '14.00', '-', NULL, NULL, '2022-03-02 13:28:40', 1, 0, NULL, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -348,13 +326,6 @@ CREATE TABLE `detalle_recetas` (
   `detalle_receta_estado` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Volcado de datos para la tabla `detalle_recetas`
---
-
-INSERT INTO `detalle_recetas` (`id_detalle_receta`, `id_receta`, `id_recursos_sede`, `detalle_receta_unidad_medida`, `detalle_receta_cantidad`, `detalle_receta_precio`, `detalle_receta_estado`) VALUES
-(1, 1, 1, 0, '1', '4.50', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -408,7 +379,7 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`id_empresa`, `empresa_razon_social`, `empresa_nombrecomercial`, `empresa_descrpcion`, `empresa_ruc`, `empresa_domiciliofiscal`, `empresa_pais`, `empresa_departamento`, `empresa_provincia`, `empresa_distrito`, `empresa_ubigeo`, `empresa_telefono1`, `empresa_telefono2`, `empresa_celular1`, `empresa_celular2`, `empresa_foto`, `empresa_correo`, `empresa_usuario_sol`, `empresa_clave_sol`, `empresa_fechayhora`, `empresa_estado`) VALUES
-(1, 'CAJU', 'CAJU', 'CAJU', '20000000000', 'Tavara 1220', 'PE', 'LORETO', 'MAYNAS', 'IQUITOS', '160101', NULL, NULL, NULL, NULL, NULL, NULL, 'MODDATOS', 'MODDATOS', '2022-03-02 12:30:31', 1);
+(1, 'TALLEDO VDA DE TAFUR RUTH MERCEDES', 'CAJU', 'CAJU', '10052383752', 'Tavara 1220', 'PE', 'LORETO', 'MAYNAS', 'IQUITOS', '160101', NULL, NULL, NULL, NULL, NULL, NULL, 'CAJUBUFE', 'Cajubufeo1', '2022-03-09 12:30:31', 1);
 
 -- --------------------------------------------------------
 
@@ -671,8 +642,8 @@ INSERT INTO `mesas` (`id_mesa`, `id_sucursal`, `mesa_nombre`, `mesa_capacidad`, 
 (-2, 5, 'TG - 02', 2, 1, 0),
 (-1, 5, 'TG - 01', 2, 1, 0),
 (0, 5, 'DELIVERY', 1, 1, 0),
-(6, 5, 'Mesa 01', 3, 1, 2),
-(7, 5, 'Mesa 02', 2, 1, 1),
+(6, 5, 'Mesa 01', 3, 1, 0),
+(7, 5, 'Mesa 02', 2, 1, 0),
 (8, 5, 'Mesa 03', 4, 1, 0),
 (9, 5, 'Mesa 04', 6, 1, 0),
 (16, 5, 'Mesa 05', 4, 1, 0),
@@ -788,7 +759,7 @@ CREATE TABLE `negocios` (
 --
 
 INSERT INTO `negocios` (`id_negocio`, `id_ciudad`, `negocio_nombre`, `negocio_direccion`, `negocio_ruc`, `negocio_foto`, `negocio_telefono`, `negocio_estado`, `negocio_fecha_registro`) VALUES
-(3, 1, 'CAJU', 'TAVARA', '20000000000', 'media/negocio/LA ULTIMA CONCHITA_24032021142225.jp', '9999999999', 1, '2021-03-24 14:22:25');
+(3, 1, 'CAJU', 'TAVARA 1220', '10052383752', 'media/negocio/LA ULTIMA CONCHITA_24032021142225.jp', '9999999999', 1, '2021-03-24 14:22:25');
 
 -- --------------------------------------------------------
 
@@ -1349,7 +1320,8 @@ INSERT INTO `permisos` (`id_permiso`, `id_opcion`, `permiso_accion`, `permiso_es
 (199, 114, 'guardar_gasto_personal_editado', 1),
 (200, 114, 'eliminar_gasto_personal', 1),
 (201, 39, 'enviar_venta_correo', 1),
-(202, 52, 'enviar_venta_correo', 1);
+(202, 52, 'enviar_venta_correo', 1),
+(203, 29, 'sumar_stock_nuevo', 1);
 
 -- --------------------------------------------------------
 
@@ -1623,13 +1595,6 @@ CREATE TABLE `recetas` (
   `receta_estado` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Volcado de datos para la tabla `recetas`
---
-
-INSERT INTO `recetas` (`id_receta`, `id_usuario`, `receta_nombre`, `receta_fecha`, `receta_estado`) VALUES
-(1, 2, 'Cerveza Cristal 337', '2022-03-02 13:05:32', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -1642,15 +1607,6 @@ CREATE TABLE `recursos` (
   `recurso_nombre` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `recurso_estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `recursos`
---
-
-INSERT INTO `recursos` (`id_recurso`, `id_categoria`, `recurso_nombre`, `recurso_estado`) VALUES
-(1, 15, 'Cerveza Cristal 337', 1),
-(2, 15, 'Cerveza Cristal 337', 1),
-(3, 15, 'Cerveza Cristal 337', 1);
 
 -- --------------------------------------------------------
 
@@ -1677,13 +1633,6 @@ CREATE TABLE `recursos_sede` (
   `recurso_sede_estado` tinyint(1) NOT NULL,
   `recurso_sede_fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `recursos_sede`
---
-
-INSERT INTO `recursos_sede` (`id_recurso_sede`, `id_usuario_creacion`, `id_sucursal`, `id_recurso`, `id_medida`, `recurso_sede_factor_unidad`, `recurso_sede_cantidad`, `recurso_sede_precio_unit`, `recurso_sede_precio_total`, `recurso_sede_peso_inicial`, `recurso_sede_peso_final`, `recurso_sede_merma`, `recurso_sede_precio`, `recurso_sede_stock`, `recurso_sede_stock_minimo`, `recurso_sede_estado`, `recurso_sede_fecha`) VALUES
-(1, 2, 5, 3, 59, '1.00', '12.00', '4.50', '54.00', '0.00', '0.00', '0.00', '4.50', '12.00', '0.00', 1, '2022-03-02 13:04:31');
 
 -- --------------------------------------------------------
 
@@ -1903,7 +1852,7 @@ CREATE TABLE `serie` (
 INSERT INTO `serie` (`id_serie`, `id_caja_numero`, `tipocomp`, `serie`, `correlativo`, `estado`) VALUES
 (1, 1, '01', 'F001', 0, 1),
 (2, 2, '01', 'F002', 0, 1),
-(3, 1, '03', 'B001', 1, 1),
+(3, 1, '03', 'B001', 0, 1),
 (5, 1, '07', 'FN01', 0, 1),
 (6, 1, '07', 'BN01', 0, 1),
 (7, 1, '08', 'FD01', 0, 1),
@@ -1955,8 +1904,8 @@ CREATE TABLE `sucursal` (
 --
 
 INSERT INTO `sucursal` (`id_sucursal`, `id_ciudad`, `id_negocio`, `sucursal_nombre`, `sucursal_direccion`, `sucursal_ruc`, `sucursal_foto`, `sucursal_telefono`, `sucursal_estado`, `sucursal_fecha_registro`) VALUES
-(4, 1, 3, 'La ultima conchita San Juan', 'Av. Quiñones 4757', '20602247687', 'media/sucursal/default.png', '987100215', 0, '2021-03-24 14:23:50'),
-(5, 1, 3, 'CAJU', 'TAVARA', '20000000000', 'media/sucursal/default.png', '987654321', 1, '2021-09-30 09:38:25');
+(4, 1, 3, 'CAJU', 'TAVARA', '10052383752', 'media/sucursal/default.png', '987100215', 0, '2021-03-24 14:23:50'),
+(5, 1, 3, 'CAJU', 'TAVARA', '10052383752', 'media/sucursal/default.png', '987654321', 1, '2021-09-30 09:38:25');
 
 -- --------------------------------------------------------
 
@@ -2349,8 +2298,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `id_persona`, `id_rol`, `usuario_nickname`, `usuario_contrasenha`, `usuario_email`, `usuario_imagen`, `usuario_estado`, `usuario_creacion`, `usuario_ultimo_login`, `usuario_ultima_modificacion`) VALUES
-(1, 1, 2, 'superadmin', '$2y$10$oPOOOgTUr4zIh511ATm/q.vzsAmxP.e2.vzyEbRn/1pzyWz2oXj0a', 'cesarjose@bufeotec.com', 'media/usuarios/usuario.jpg', 1, '2020-09-17 00:00:00', '2022-03-02 12:46:29', '2020-09-17 00:00:00'),
-(2, 2, 3, 'admin', '$2y$10$SMsrzOaJ/nGY1FSmy9SyG.vdL6xmt9/rKjBYj0z4RYa79d1N5KqAW', 'carlos@gmail.com', 'media/usuarios/usuario.jpg', 1, '2020-10-27 18:29:10', '2022-03-02 12:48:47', '2020-10-27 18:29:10');
+(1, 1, 2, 'superadmin', '$2y$10$oPOOOgTUr4zIh511ATm/q.vzsAmxP.e2.vzyEbRn/1pzyWz2oXj0a', 'cesarjose@bufeotec.com', 'media/usuarios/usuario.jpg', 1, '2020-09-17 00:00:00', '2022-03-07 13:30:28', '2020-09-17 00:00:00'),
+(2, 2, 3, 'admin', '$2y$10$SMsrzOaJ/nGY1FSmy9SyG.vdL6xmt9/rKjBYj0z4RYa79d1N5KqAW', 'carlos@gmail.com', 'media/usuarios/usuario.jpg', 1, '2020-10-27 18:29:10', '2022-03-02 19:29:55', '2020-10-27 18:29:10');
 
 -- --------------------------------------------------------
 
@@ -2444,13 +2393,6 @@ CREATE TABLE `ventas` (
   `venta_seriecorrelativo_notaventa` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '	Aqui se llena cuando se edita una nota de venta'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Volcado de datos para la tabla `ventas`
---
-
-INSERT INTO `ventas` (`id_venta`, `id_caja_numero`, `id_empresa`, `id_usuario`, `id_mesa`, `id_cliente`, `id_tipo_pago`, `id_moneda`, `venta_condicion_resumen`, `venta_tipo_envio`, `venta_direccion`, `venta_tipo`, `venta_serie`, `venta_correlativo`, `venta_totalgratuita`, `venta_totalexonerada`, `venta_totalinafecta`, `venta_totalgravada`, `venta_totaligv`, `venta_incluye_igv`, `venta_totaldescuento`, `venta_icbper`, `venta_total`, `venta_pago_cliente`, `venta_vuelto`, `venta_fecha`, `venta_observacion`, `tipo_documento_modificar`, `serie_modificar`, `correlativo_modificar`, `venta_codigo_motivo_nota`, `venta_estado_sunat`, `venta_fecha_envio`, `venta_rutaXML`, `venta_rutaCDR`, `venta_respuesta_sunat`, `venta_fecha_de_baja`, `anulado_sunat`, `venta_cancelar`, `venta_seriecorrelativo_notaventa`) VALUES
-(1, 1, 1, 2, 6, 3, 3, 1, 1, 0, NULL, '03', 'B001', '1', '0.00', '7.00', '0.00', '0.00', '0.00', 1, '0.00', '0.00', '7.00', '0.00', '0.00', '2022-03-02 13:25:53', NULL, '', NULL, '', '0', 0, NULL, NULL, NULL, NULL, NULL, 0, 1, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -2524,13 +2466,6 @@ CREATE TABLE `ventas_detalle_pagos` (
   `venta_detalle_pago_monto` decimal(10,2) NOT NULL DEFAULT '0.00',
   `venta_detalle_pago_estado` tinyint(4) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `ventas_detalle_pagos`
---
-
-INSERT INTO `ventas_detalle_pagos` (`id_venta_detalle_pago`, `id_venta`, `id_tipo_pago`, `venta_detalle_pago_monto`, `venta_detalle_pago_estado`) VALUES
-(1, 1, 3, '7.00', 1);
 
 --
 -- Índices para tablas volcadas
@@ -3111,7 +3046,7 @@ ALTER TABLE `almacenes_salida`
 -- AUTO_INCREMENT de la tabla `asistencia`
 --
 ALTER TABLE `asistencia`
-  MODIFY `id_asistencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=199;
+  MODIFY `id_asistencia` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `asistencia_fecha`
@@ -3123,7 +3058,7 @@ ALTER TABLE `asistencia_fecha`
 -- AUTO_INCREMENT de la tabla `caja`
 --
 ALTER TABLE `caja`
-  MODIFY `id_caja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id_caja` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `caja_numero`
@@ -3153,19 +3088,19 @@ ALTER TABLE `ciudad`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=186;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `comanda`
 --
 ALTER TABLE `comanda`
-  MODIFY `id_comanda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_comanda` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `comanda_detalle`
 --
 ALTER TABLE `comanda_detalle`
-  MODIFY `id_comanda_detalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_comanda_detalle` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `conversiones`
@@ -3189,7 +3124,7 @@ ALTER TABLE `detalle_compra`
 -- AUTO_INCREMENT de la tabla `detalle_recetas`
 --
 ALTER TABLE `detalle_recetas`
-  MODIFY `id_detalle_receta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_detalle_receta` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `documentos`
@@ -3333,13 +3268,13 @@ ALTER TABLE `periodo_laboral`
 -- AUTO_INCREMENT de la tabla `permisos`
 --
 ALTER TABLE `permisos`
-  MODIFY `id_permiso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=203;
+  MODIFY `id_permiso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=204;
 
 --
 -- AUTO_INCREMENT de la tabla `personas`
 --
 ALTER TABLE `personas`
-  MODIFY `id_persona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_persona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `persona_turno`
@@ -3387,19 +3322,19 @@ ALTER TABLE `puntos_cliente`
 -- AUTO_INCREMENT de la tabla `recetas`
 --
 ALTER TABLE `recetas`
-  MODIFY `id_receta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_receta` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `recursos`
 --
 ALTER TABLE `recursos`
-  MODIFY `id_recurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_recurso` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `recursos_sede`
 --
 ALTER TABLE `recursos_sede`
-  MODIFY `id_recurso_sede` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_recurso_sede` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `registro_asistencias`
@@ -3441,7 +3376,7 @@ ALTER TABLE `serie`
 -- AUTO_INCREMENT de la tabla `sub_recetas`
 --
 ALTER TABLE `sub_recetas`
-  MODIFY `id_sub_receta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_sub_receta` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `sucursal`
@@ -3519,7 +3454,7 @@ ALTER TABLE `unidad_medida`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios_negocio`
@@ -3531,13 +3466,13 @@ ALTER TABLE `usuarios_negocio`
 -- AUTO_INCREMENT de la tabla `usuarios_sucursal`
 --
 ALTER TABLE `usuarios_sucursal`
-  MODIFY `id_usuario_sucursal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_usuario_sucursal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `ventas_anulados`
@@ -3561,7 +3496,7 @@ ALTER TABLE `ventas_detalle`
 -- AUTO_INCREMENT de la tabla `ventas_detalle_pagos`
 --
 ALTER TABLE `ventas_detalle_pagos`
-  MODIFY `id_venta_detalle_pago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_venta_detalle_pago` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
