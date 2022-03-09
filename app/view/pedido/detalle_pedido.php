@@ -905,6 +905,7 @@
             dataType: 'json',
             success:function (r) {
                 $("#cliente_nombre").val(r.result.name+ ' ' + r.result.first_name+ ' ' + r.result.last_name);
+                $("#cliente_direccion").val(r.result.direccion);
             }
         });
     }
@@ -918,6 +919,7 @@
             dataType: 'json',
             success:function (r) {
                 $("#cliente_nombre").val(r.result.razon_social);
+                $("#cliente_direccion").val(r.result.direccion);
             }
         });
     }
