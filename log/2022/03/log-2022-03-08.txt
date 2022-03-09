@@ -1,0 +1,35 @@
+2022-03-08 19:08:02[UTC -5] [ip] 127.0.0.1 [lugar] Excepcion No Manejada [texto] [LEVEL]: 8 IN C:\laragon\www\caju\core\session.php: 15[MESSAGGE]Undefined index: app
+
+2022-03-08 19:08:03[UTC -5] [ip] 127.0.0.1 [lugar] Excepcion No Manejada [texto] [LEVEL]: 8 IN C:\laragon\www\caju\app\view\ventas\historial_ventas.php: 15[MESSAGGE]Undefined variable: tipo_venta
+
+2022-03-08 19:08:03[UTC -5] [ip] 127.0.0.1 [lugar] Excepcion No Manejada [texto] [LEVEL]: 8 IN C:\laragon\www\caju\app\view\ventas\historial_ventas.php: 16[MESSAGGE]Undefined variable: tipo_venta
+
+2022-03-08 19:08:03[UTC -5] [ip] 127.0.0.1 [lugar] Excepcion No Manejada [texto] [LEVEL]: 8 IN C:\laragon\www\caju\app\view\ventas\historial_ventas.php: 17[MESSAGGE]Undefined variable: tipo_venta
+
+2022-03-08 19:08:03[UTC -5] [ip] 127.0.0.1 [lugar] Excepcion No Manejada [texto] [LEVEL]: 8 IN C:\laragon\www\caju\app\view\ventas\historial_ventas.php: 18[MESSAGGE]Undefined variable: tipo_venta
+
+2022-03-08 19:08:03[UTC -5] [ip] 127.0.0.1 [lugar] Excepcion No Manejada [texto] [LEVEL]: 8 IN C:\laragon\www\caju\app\view\ventas\historial_ventas.php: 19[MESSAGGE]Undefined variable: tipo_venta
+
+2022-03-08 19:08:03[UTC -5] [ip] 127.0.0.1 [lugar] Excepcion No Manejada [texto] [LEVEL]: 8 IN C:\laragon\www\caju\app\view\ventas\historial_ventas.php: 25[MESSAGGE]Undefined variable: estado_cpe
+
+2022-03-08 19:08:03[UTC -5] [ip] 127.0.0.1 [lugar] Excepcion No Manejada [texto] [LEVEL]: 8 IN C:\laragon\www\caju\app\view\ventas\historial_ventas.php: 26[MESSAGGE]Undefined variable: estado_cpe
+
+2022-03-08 19:08:03[UTC -5] [ip] 127.0.0.1 [lugar] Excepcion No Manejada [texto] [LEVEL]: 8 IN C:\laragon\www\caju\app\view\ventas\historial_ventas.php: 27[MESSAGGE]Undefined variable: estado_cpe
+
+2022-03-08 19:08:03[UTC -5] [ip] 127.0.0.1 [lugar] Excepcion No Manejada [texto] [LEVEL]: 8 IN C:\laragon\www\caju\app\view\ventas\historial_ventas.php: 61[MESSAGGE]Undefined variable: tipo_venta
+
+2022-03-08 19:08:03[UTC -5] [ip] 127.0.0.1 [lugar] Excepcion No Manejada [texto] [LEVEL]: 8 IN C:\laragon\www\caju\app\view\ventas\historial_ventas.php: 63[MESSAGGE]Undefined variable: tipo_venta
+
+2022-03-08 19:08:03[UTC -5] [ip] 127.0.0.1 [lugar] Excepcion No Manejada [texto] [LEVEL]: 8 IN C:\laragon\www\caju\app\view\ventas\historial_ventas.php: 65[MESSAGGE]Undefined variable: tipo_venta
+
+2022-03-08 19:08:03[UTC -5] [ip] 127.0.0.1 [lugar] Excepcion No Manejada [texto] [LEVEL]: 8 IN C:\laragon\www\caju\app\view\ventas\historial_ventas.php: 67[MESSAGGE]Undefined variable: tipo_venta
+
+2022-03-08 19:08:10[UTC -5] [ip] 127.0.0.1 [lugar] Excepcion No Manejada [texto] [LEVEL]: 8 IN C:\laragon\www\caju\core\session.php: 15[MESSAGGE]Undefined index: app
+
+2022-03-08 19:08:10[UTC -5] [ip] 127.0.0.1 [lugar] Excepcion No Manejada [texto] [LEVEL]: 8 IN C:\laragon\www\caju\app\controllers\VentasController.php: 1305[MESSAGGE]Undefined property: stdClass::$pago_fecha_emitida
+
+2022-03-08 19:08:10[UTC -5] [ip] 127.0.0.1 [lugar] Excepcion No Manejada [texto] [LEVEL]: 8192 IN C:\laragon\www\caju\app\view\pdf\fpdf\fpdf.php: 1108[MESSAGGE]Function get_magic_quotes_runtime() is deprecated
+
+2022-03-08 19:08:10[UTC -5] [ip] 127.0.0.1 [lugar] Excepcion No Manejada [texto] [LEVEL]: 8 IN C:\laragon\www\caju\app\view\ventas\imprimir_ticket_pdf.php: 35[MESSAGGE]Undefined property: stdClass::$empresa_nombre
+
+2022-03-08 19:08:10[UTC -5] [ip] 127.0.0.1 [lugar] VentasController|enviar_venta_correo [texto] SMTP Error: Could not authenticate.
