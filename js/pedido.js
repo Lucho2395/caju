@@ -988,6 +988,7 @@ function Consultar_serie(){
         $("#cliente_numero").val('');
         $("#cliente_nombre").val('');
     }else{
+        $("#select_tipodocumento").val('2');
         $("#cliente_numero").val('11111111');
         $("#cliente_nombre").val('ANONIMO');
     }

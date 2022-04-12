@@ -930,7 +930,8 @@ class Pedido
     public function listar_busqueda_productos($parametro){
         try{
             $sql = "select * from productos p inner join grupos g on p.id_grupo = g.id_grupo inner join producto_precio pp on p.id_producto = pp.id_producto
-                    where pp.producto_precio_estado = 1 and p.producto_nombre like ? and pp.id_producto_precio <> -1";
+                    where pp.producto_precio_estado = 1 and p.producto_nombre like ? and pp.id_producto_precio <> -1
+                    and p.producto_estado = 1";
             $stm = $this->pdo->prepare($sql);
             $stm->execute(['%'.$parametro.'%']);
             $result = $stm->fetchAll();
@@ -1573,9 +1574,9 @@ class Pedido
         $result = false;
         try{
             $sql = "Select usuario_contrasenha from usuarios 
-                    where id_rol = ? and usuario_estado = 1";
+                    where (id_rol = 7 or id_rol = 5) and usuario_estado = 1";
             $stm = $this->pdo->prepare($sql);
-            $stm->execute([$user]);
+            $stm->execute();
             $info = $stm->fetchAll();
             foreach ($info as $i){
                 if(password_verify($pass, $i->usuario_contrasenha)){

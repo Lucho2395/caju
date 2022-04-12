@@ -41,22 +41,22 @@ $printer->setJustification(Printer::JUSTIFY_CENTER);
 	el logo
 */
 try{
-    $logo = EscposImage::load("media/logo/ticket_laultimaconchita.png", false);
+    $logo = EscposImage::load("media/logo/logo_caju_ticket.png", false);
     $printer->bitImage($logo);
 }catch(Exception $e){/*No hacemos nada si hay error*/}
 /*
 	Ahora vamos a imprimir un encabezado
 */
-$printer->setFont(Printer::FONT_B);
+/*$printer->setFont(Printer::FONT_B);
 $printer->setTextSize(2,2);
-$printer->text("$empresa->empresa_nombrecomercial" . "\n");
+$printer->text("$empresa->empresa_nombrecomercial" . "\n");*/
 $printer->setFont(Printer::FONT_A);
 $printer->setTextSize(1,1);
 //$printer->text("$dato_pago->empresa_nombre" . "\n");
 $printer->text("RUC Nº $empresa->empresa_ruc" . "\n");
-$printer->text("CAL. BORJA NRO . 641" . "\n");
+$printer->text("CAL. Tavara 1220" . "\n");
 //$printer->text("CAL. YAVARI NRO. 1360" . "\n");
-$printer->text("LORETO - MAYNAS - PUNCHANA" . "\n");
+$printer->text("LORETO - MAYNAS - IQUITOS" . "\n");
 if($empresa->empresa_telefono1 != NULL){
     $printer->text("Tel. $empresa->empresa_telefono1" . "\n");
 }

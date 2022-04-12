@@ -22,7 +22,8 @@ use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
 	desde el panel de control
 */
 
-$nombre_impresora = $caja_dato->caja_numero_impresora;
+//$nombre_impresora = $caja_dato->caja_numero_impresora;
+$nombre_impresora = "Ticketera";
 //$nombre_impresora = $detalle_comanda->grupo_ticketera; //ticketera individual por grupo - sacar comentario
 
 
